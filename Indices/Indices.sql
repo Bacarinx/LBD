@@ -13,7 +13,6 @@ CREATE INDEX IDX_USUARIO_NM
 -- =============================================
 -- ÍNDICES - RESPONSAVEL
 -- =============================================
-
 -- Busca por documento (CPF/CNPJ)
 CREATE INDEX IDX_RESPONSAVEL_DOCUMENTO 
     ON RESPONSAVEL(DOCUMENTO);
@@ -30,7 +29,6 @@ CREATE INDEX IDX_RESPONSAVEL_EMAIL
 -- =============================================
 -- ÍNDICES - CATEGORIA
 -- =============================================
-
 -- Busca por descrição da categoria
 CREATE INDEX IDX_CATEGORIA_DESCRICAO 
     ON CATEGORIA(DESCRICAO);
@@ -43,26 +41,24 @@ CREATE INDEX IDX_CATEGORIA_ID_MESTRE
 -- =============================================
 -- ÍNDICES - EQUIPAMENTO
 -- =============================================
-
 -- FK: equipamentos por categoria (filtro e JOIN mais comum)
 CREATE INDEX IDX_EQUIPAMENTO_ID_CATEGORIA 
     ON EQUIPAMENTO(ID_CATEGORIA);
     
 -- Busca por descrição do equipamento
-CREATE INDEX IDX_EQUIPAMENTO_ID_CATEGORIA 
+CREATE INDEX IDX_EQUIPAMENTO_DESCRICAO
     ON EQUIPAMENTO(DESCRICAO); 
 
 -- Busca por marca e modelo (relatórios, filtros de tela)
 CREATE INDEX IDX_EQUIPAMENTO_DS_MARCA 
     ON EQUIPAMENTO(DS_MARCA);
  
-CREATE INDEX IDX_EQUIPAMENTO_DS_MARCA 
+CREATE INDEX IDX_EQUIPAMENTO_DS_MODELO
     ON EQUIPAMENTO(DS_MODELO);   
 
 -- =============================================
 -- ÍNDICES - ENTRADA
 -- =============================================
-
 -- FK: entrada do equipamento
 CREATE INDEX IDX_ENTRADA_ID_EQUIPAMENTO 
     ON ENTRADA(ID_EQUIPAMENTO);
@@ -83,7 +79,6 @@ CREATE INDEX IDX_ENTRADA_DT_ENTRADA
 -- =============================================
 -- ÍNDICES - SAIDA
 -- =============================================
-
 -- FK: saída do equipamento
 CREATE INDEX IDX_SAIDA_ID_EQUIPAMENTO 
     ON SAIDA(ID_EQUIPAMENTO);
